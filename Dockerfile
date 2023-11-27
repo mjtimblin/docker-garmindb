@@ -5,7 +5,6 @@ RUN apt-get update && apt-get -y install jq pipx
 RUN pipx install garmindb
 
 RUN pipx ensurepath
-RUN . /root/.profile
 
 WORKDIR /root/.GarminDb
 RUN cp /root/.local/pipx/venvs/garmindb/lib/python3.11/site-packages/garmindb/GarminConnectConfig.json.example /root/.GarminDb
@@ -18,5 +17,6 @@ ENV PASSWORD "pass"
 ENV STARTDATE "01/01/2021"
 ENV LATEST "20"
 ENV ALL "111"
+ENV PATH "/bin:/root/.local/bin:$PATH"
 
 CMD ["./run_garmin"]
