@@ -3,13 +3,11 @@ services:
  download:
   image: ghcr.io/mjtimblin/docker-garmindb:latest
   environment:
-   - USERNAME="mrx"
-   - PASSWORD="mypassword"
-   - STARTDATE="02/02/2019"
-   - DOWNLOADDAYS=5
-   - DOWNLOADALLACTIVITIES=5
-   - DOWNLOADLATESTACTIVITIES=5
-   - DOWNLOADDAYSOVERLAP=0
+   - USERNAME="garmin_username"
+   - PASSWORD="garmin_password"
+   - STARTDATE="12/31/2019"
+   - LATEST=25
+   - ALL=1000
   container_name: download-garmindb
   command: ./run_garmin --download --latest --monitoring
   volumes:
