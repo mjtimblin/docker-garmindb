@@ -8,7 +8,7 @@ RUN pipx ensurepath
 RUN . /root/.profile
 
 WORKDIR /root/.GarminDb
-RUN cp /root/.local/pipx/venvs/garmindb/lib/python3.11/garmindb/GarminConnectConfig.json.example /root/.GarminDb
+RUN cp /root/.local/pipx/venvs/garmindb/lib/python3.11/site-packages/garmindb/GarminConnectConfig.json.example /root/.GarminDb
 
 WORKDIR /root
 ADD ./run_garmin ./
