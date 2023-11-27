@@ -1,11 +1,13 @@
-FROM python:3.12
+FROM python:3.11
 
 # Install dependencies
 RUN apt-get update && apt-get -y install jq pipx
 RUN pipx install garmindb
+RUN pipx ensurepath
+RUN source /root/.profile
 
 WORKDIR /root/.GarminDb
-RUN cp /usr/local/lib/python3.12/site-packages/garmindb/GarminConnectConfig.json.example /root/.GarminDb
+RUN cp /root/.local/pipx/venvs/garmindb/lib/python3.11/garmindb/GarminConnectConfig.json.example /root/.GarminDb
 
 WORKDIR /root
 ADD ./run_garmin ./
