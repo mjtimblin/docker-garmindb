@@ -12,11 +12,16 @@ RUN cp /root/.local/pipx/venvs/garmindb/lib/python3.11/site-packages/garmindb/Ga
 WORKDIR /root
 ADD ./run_garmin ./
 
-ENV USERNAME "test"
-ENV PASSWORD "pass"
-ENV STARTDATE "01/01/2021"
-ENV LATEST "20"
-ENV ALL "111"
+ARG USERNAME
+ENV USERNAME=${USERNAME}
+ARG PASSWORD
+ENV PASSWORD=${PASSWORD}
+ARG STARTDATE
+ENV STARTDATE=${STARTDATE}
+ARG LATEST=30
+ENV LATEST=${LATEST}
+ARG ALL=3000
+ENV ALL=${ALL}
 ENV PATH "/bin:/root/.local/bin:$PATH"
 
 CMD ["./run_garmin"]
