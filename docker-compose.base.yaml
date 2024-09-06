@@ -1,9 +1,9 @@
 version: '3'
 services:
   download:
-    image: asdlfkj31h/garmindb:latest
+    image: mjtimblin/garmindb:latest
     environment:
-    - USERNAME=mrx
+    - USERNAME=garmin_username
     - PASSWORD=mypassword
     - STARTDATE=01/01/2019
     # - LATEST=30 # OPTIONAL (DEFAULT: 30)
