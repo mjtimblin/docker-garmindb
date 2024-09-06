@@ -15,6 +15,6 @@ cat .GarminDb/GarminConnectConfig.json.example | jq --arg new $USERNAME \
    .data.download_all_activities = $newall' > .GarminDb/GarminConnectConfig.json
 
 echo "read more about garmindb here: https://github.com/tcgoetz/GarminDB"
-echo "read more about docker-garmindb here: https://github.com/8cH9azbsFifZ/docker-garmindb"
+echo "read more about docker-garmindb here: https://github.com/mjtimblin/docker-garmindb"
 
 garmindb_cli.py $1 $2 $3 $4 $5
